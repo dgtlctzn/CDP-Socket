@@ -62,6 +62,7 @@ class SingleCDPSocket:
 
     # noinspection PyTypeChecker
     async def exec(self, method: str, params: dict = None, timeout: float = 2):
+        timeout = 30
         _id = await self.send(method=method, params=params)
         # noinspection PyStatementEffect
         self._responses[_id]
